@@ -58,7 +58,7 @@ class WebService
             $this->response = $this->client->post(
                 $url,
                 $jsonContentType ? ['json' => $data] :
-                ['body' => $data]
+                ['form_params' => $data] # Changed 'body' for 'form_params' - to work with Prestashop 8.0.2
             );
             return $this;
         } catch (\Throwable $th) {
